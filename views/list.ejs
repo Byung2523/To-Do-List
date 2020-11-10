@@ -1,0 +1,26 @@
+	<%- include("header") -%>
+
+
+	<div class="box" id="heading">
+			<!--EJS procedure to display the information sent from get request in app.js -->
+			<h1> <%= listTitle %></h1>
+	</div>
+
+	<div class="box">
+		<!--Using a for loop to add items to the end of the list as a "New" item in the item array -->
+		<% for (var i = 0; i < newListItems.length; i++) { %>
+			<div class="item">
+					<input type="checkbox">
+					<p> <%= newListItems[i] %></p>
+			</div>
+		<% } %>
+
+		<!--Creating a  text form to insert new items into the array list with a button -->
+		<form class="" action="/" method="post">
+			<input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+			<!-- In order to redirect to the correct page with EJS post request,   -->
+			<button type="submit" name="list" value=<%= listTitle %>>+</button>
+		</form>
+	</div>
+		
+	<%- include("footer") -%>	
